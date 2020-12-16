@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/añadirContacto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:text="Añadir contacto"
+        android:textSize="22sp"/>
+
+    <EditText
+        android:id="@+id/nombreCreateEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/añadirContacto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:ems="15"
+        android:hint="Nombre"
+        android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/direccionCreateEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nombreCreateEditText"
+        android:layout_centerHorizontal="true"
+        android:ems="15"
+        android:hint="Dirección" />
+
+    <EditText
+        android:id="@+id/telefonoCreateEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/direccionCreateEditText"
+        android:layout_centerHorizontal="true"
+        android:ems="15"
+        android:hint="Teléfono" />
+
+    <Button
+        android:id="@+id/agregarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/telefonoCreateEditText"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="30dp"
+        android:text="Agregar" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/agregarButton"
+        android:layout_marginLeft="100dp"
+        android:layout_toRightOf="@id/agregarButton"
+        android:text="Cancelar" />
+
+</RelativeLayout>

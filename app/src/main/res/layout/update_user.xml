@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/modificarContacto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:text="Modificar contacto"
+        android:textSize="22sp"/>
+
+    <EditText
+        android:id="@+id/nombreUpdateEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/modificarContacto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:ems="15"
+        android:hint="Nombre"
+        android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/direccionUpdateEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nombreUpdateEditText"
+        android:layout_centerHorizontal="true"
+        android:ems="15"
+        android:hint="Dirección" />
+
+    <EditText
+        android:id="@+id/telefonoUpdateEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/direccionUpdateEditText"
+        android:layout_centerHorizontal="true"
+        android:ems="15"
+        android:hint="Teléfono" />
+
+    <Button
+        android:id="@+id/modificarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/telefonoUpdateEditText"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="30dp"
+        android:text="Modificar" />
+
+    <Button
+        android:id="@+id/cancelButtonUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/modificarButton"
+        android:layout_marginLeft="90dp"
+        android:layout_toRightOf="@id/modificarButton"
+        android:text="Cancelar" />
+
+</RelativeLayout>
