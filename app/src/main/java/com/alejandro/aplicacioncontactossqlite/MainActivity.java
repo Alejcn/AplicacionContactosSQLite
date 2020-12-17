@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
     private SQLiteDatabase db;
     private UsuariosSQLiteHelper usuariosSQL;
 
-    private TextView tv_resultado;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
         db = usuariosSQL.getWritableDatabase();
         Cursor c = db.rawQuery("SELECT id, nombre, direccion, telefono FROM Contactos", null);
 
-        tv_resultado = findViewById(R.id.tv_resultado);
-        tv_resultado.setText("");
         if (c.moveToFirst()) {
             do {
                 String id = c.getString(0);

@@ -37,7 +37,6 @@ public class UpdateUser extends AppCompatActivity {
             nombreContacto = c.getString(0);
             direccionContacto = c.getString(1);
             telefonoContacto = c.getString(2);
-            Toast.makeText(getApplicationContext(), "Este es el id: " + nombreContacto, Toast.LENGTH_SHORT).show();
 
             final TextView textoNombre = findViewById(R.id.nombreUpdateEditText);
             textoNombre.setText(nombreContacto);

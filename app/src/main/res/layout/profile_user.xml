@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/fotoUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/avatar01"
+        />
 
     <TextView
         android:id="@+id/nombreProfileView"
@@ -36,13 +37,23 @@
 
     <TextView
         android:id="@+id/direccionProfileView"
-        android:layout_width="wrap_content"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/direccionProfile"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="5dp"
         android:text="aqui la dirección"
         android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/buttonMaps"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/direccionProfileView"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="680dp"
+        android:background="@drawable/google_maps_icon" />
 
     <TextView
         android:id="@+id/telefonoProfile"
@@ -64,5 +75,25 @@
         android:layout_marginTop="5dp"
         android:text="aqui el telefono"
         android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/buttonCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/telefonoProfileView"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:text="Call" />
+
+    <Button
+        android:id="@+id/buttonSms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonCall"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="110dp"
+        android:layout_toLeftOf="@id/buttonCall"
+        android:text="Sms"
+        />
 
 </RelativeLayout>

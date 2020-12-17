@@ -13,6 +13,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         app:maxImageSize="40dp"
+        app:srcCompat="@drawable/ic_menu_invite"
         />
 
     <ListView
@@ -27,12 +28,5 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="No hay contactos" />
-
-    <TextView
-        android:id="@+id/tv_resultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
-        android:text="" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
