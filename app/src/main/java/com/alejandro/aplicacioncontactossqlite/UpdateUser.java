@@ -1,12 +1,14 @@
 package com.alejandro.aplicacioncontactossqlite;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,16 +28,24 @@ public class UpdateUser extends AppCompatActivity {
         contacto = getIntent().getExtras().getString("contacto");
         usuariosSQL = new UsuariosSQLiteHelper(this, "ContactosDB1", null, 1);
 
-        String nombreContacto = contacto.split(" ")[1];
-        String direccionContacto = contacto.split(" ")[2];
-        String telefonoContacto = contacto.split(" ")[3];
+        db = usuariosSQL.getWritableDatabase();
+        String idContacto = contacto.split(" ")[0];
 
-        final TextView textoNombre = findViewById(R.id.nombreUpdateEditText);
-        textoNombre.setText(nombreContacto);
-        final TextView textoDireccionc = findViewById(R.id.direccionUpdateEditText);
-        textoDireccionc.setText(direccionContacto);
-        final TextView textoTelefono = findViewById(R.id.telefonoUpdateEditText);
-        textoTelefono.setText(telefonoContacto);
+        Cursor c = db.rawQuery("SELECT nombre, direccion, telefono FROM Contactos WHERE id = '"+idContacto+"'", null);
+        String nombreContacto, direccionContacto, telefonoContacto;
+        if(c.moveToFirst()) {
+            nombreContacto = c.getString(0);
+            direccionContacto = c.getString(1);
+            telefonoContacto = c.getString(2);
+            Toast.makeText(getApplicationContext(), "Este es el id: " + nombreContacto, Toast.LENGTH_SHORT).show();
+
+            final TextView textoNombre = findViewById(R.id.nombreUpdateEditText);
+            textoNombre.setText(nombreContacto);
+            final TextView textoDireccionc = findViewById(R.id.direccionUpdateEditText);
+            textoDireccionc.setText(direccionContacto);
+            final TextView textoTelefono = findViewById(R.id.telefonoUpdateEditText);
+            textoTelefono.setText(telefonoContacto);
+        }
 
         nombreInsertado = findViewById(R.id.nombreUpdateEditText);
         direccionInsertada = findViewById(R.id.direccionUpdateEditText);

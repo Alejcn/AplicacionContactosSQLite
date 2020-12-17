@@ -55,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
                 String nom = c.getString(1);
                 String direc = c.getString(2);
                 String tel = c.getString(3);
-                listaContactos.add(id + " " + nom + " " + direc + " " + tel);
+                //listaContactos.add(id + " " + nom + " " + direc + " " + tel);
+                listaContactos.add(id + " " + nom);
             } while(c.moveToNext());
             adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1 ,listaContactos);
             listViewNombres.setAdapter(adapter);
@@ -105,8 +106,6 @@ public class MainActivity extends AppCompatActivity {
         final String contacto = (listaContactos.get((int) menuInfo.id));
         final String idContacto = contacto.split(" ")[0];
         String nombreContacto = contacto.split(" ")[1];
-
-
 
         switch (menuItem.getItemId()) {
             case R.id.borrar_usuario:
